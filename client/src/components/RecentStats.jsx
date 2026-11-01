@@ -12,7 +12,7 @@ function RecentStats({ records, onEdit, onDelete }) {
             <li key={r.id} className="stat-card">
               <div>
                 <p className="muted">{r.description}</p>                
-                <p>Calories Intake: {r.intake} kcal | Calories Burned: {r.burned} kcal</p>
+                <p>Calories Intake: {r.intake} | Calories Burned: {r.burned} </p>
               </div>
               <div className="card-actions">
                 <strong>{r.date}</strong>
