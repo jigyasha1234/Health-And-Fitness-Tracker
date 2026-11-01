@@ -1,0 +1,149 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #3b3b3b;
+  color: #fff;
+  font-family: "Ubuntu", "Segoe UI", sans-serif;
+}
+
+.app { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 16px; 
+}
+
+h1 { 
+  font-size: 1.1rem; 
+  margin: 0 0 12px; 
+}
+
+.muted { color: #1c1c1c; font-size: 0.7rem; }
+.top-panel .muted, .bottom .muted { color: #1c1c1c; }
+
+/* Top panel */
+.top-panel {
+  display: flex;
+  gap: 24px;
+  background: #636363;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.4);
+}
+.add-card {
+  flex: 0 0 300px;
+  background: #999;
+  border-radius: 10px;
+  padding: 32px 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.4);
+}
+.add-card h3 { 
+  margin: 0 0 12px; 
+  font-weight: 400; 
+  font-size: 1.1rem; 
+}
+.add-btn {
+  background: #4caf50; 
+  color: #fff; 
+  border: 0;
+  padding: 6px 14px; 
+  border-radius: 4px; 
+  font-size: 0.7rem; 
+  cursor: pointer;
+}
+.weekly-area { 
+  flex: 1; 
+  min-width: 0; 
+}
+.weekly-title { 
+  font-size: 1rem; 
+  margin: 0 0 8px; 
+}
+
+/* Bottom section */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 28px;
+}
+.recent { flex: 1; min-width: 0; }
+.overall { flex: 0 0 320px; }
+
+.section-title { font-style: italic; font-size: 1rem; margin: 0 0 6px; }
+.title-dot::after { content: "."; }
+.title-colon::after { content: ":"; }
+
+/* Records list */
+.stats-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.stat-card {
+  display: flex; 
+  justify-content: space-between; 
+  gap: 12px;
+  background: #f5f7f8; 
+  padding: 12px; 
+  border-radius: 8px;
+  color:#888
+}
+.stat-card p { 
+  margin: 4px 0 0; 
+  font-size: 0.85rem;
+  color:#888
+ }
+.stat-card .muted { 
+  color: #888; 
+}
+.card-actions { 
+  display: flex; 
+  gap: 8px; 
+  align-items: flex-start;
+ }
+.card-actions button {
+  border: 0; 
+  border-radius: 4px; 
+  padding: 5px 10px; 
+  cursor: pointer;
+  background: #2196f3; 
+  color: #fff;
+}
+.card-actions .danger { background: #e53935; }
+
+/* Modal */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.6);
+  display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 10;
+}
+.modal {
+  width: 100%; max-width: 420px; background: #4a4a4a;
+  padding: 22px; border-radius: 10px; display: flex; flex-direction: column;
+}
+.modal h2 { margin: 0 0 12px; font-size: 1.2rem; }
+.modal label { margin-top: 10px; font-size: 0.85rem; }
+.modal input {
+  margin-top: 4px; padding: 8px; border-radius: 4px; border: 1px solid #888;
+  background: #fff; color: #111;
+}
+.error { color: #ff8a80; font-size: 0.75rem; margin: 4px 0 0; }
+.form-actions { display: flex; gap: 10px; margin-top: 18px; }
+.form-actions button {
+  flex: 1; padding: 9px; border: 0; border-radius: 4px; cursor: pointer;
+  background: #4caf50; color: #fff;
+}
+.form-actions .cancel { background: #777; }
+
+/* Tablet */
+@media (max-width: 900px) {
+  .top-panel { flex-direction: column; }
+  .add-card { flex: none; }
+  .bottom { flex-direction: column; }
+  .overall { flex: none; width: 100%; }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .app { padding: 10px; }
+  .add-card { padding: 22px 12px; }
+  .stat-card { flex-direction: column; }
+  .card-actions { align-self: flex-start; }
+}
