@@ -3,6 +3,7 @@ import HealthForm from "./components/HealthForm";
 import RecentStats from "./components/RecentStats";
 import OverallChart from "./components/OverallChart";
 import WeeklyChart from "./components/WeeklyChart";
+import { getLast7DaysData } from "./utils/dates";
 import "./App.css";
 import "./App.css";
 
@@ -57,6 +58,8 @@ function App() {
   const handleDelete = (id) => {
     setRecords((prev) => prev.filter((r) => r.id !== id));
   };
+  
+  const data = getLast7DaysData(records);
 
     return (
     <div className="app">
@@ -68,8 +71,8 @@ function App() {
           <button className="add-btn" onClick={openAddForm}>+ Add data</button>
         </div>
         <div className="weekly-area">
-          {records.length > 0 ? (
-            <WeeklyChart records={records} />
+          {data.length > 0 ? (
+            <WeeklyChart records={data} />
           ) : (
             <p className="muted">No data available</p>
           )}

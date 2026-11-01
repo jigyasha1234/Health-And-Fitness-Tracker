@@ -1,16 +1,14 @@
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid, ResponsiveContainer,
 } from "recharts";
-import { getLast7DaysData } from "../utils/dates";
 
 function WeeklyChart({ records }) {
-  const data = getLast7DaysData(records);
 
   return (
     <div className="weekly">
       <h2 className="weekly-title">Weekly Health Trends</h2>
       <ResponsiveContainer width="100%" height={220}>
-        <BarChart data={data}>
+        <BarChart data={records}>
           <CartesianGrid strokeDasharray="3 3" stroke="#888" />
           <XAxis dataKey="date" stroke="#eee" tick={{ fontSize: 11 }} />
           <YAxis stroke="#eee" tick={{ fontSize: 11 }} />
